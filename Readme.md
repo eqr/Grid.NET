@@ -1,20 +1,24 @@
-Grid.NET is a caching solution for .NET Standard application that solves the problem of effective search over a collection by different class properties in memory-efficient way.
+*Grid.NET* is a caching solution for .NET Standard application that solves the problem of effective search over a collection by different class properties in memory-efficient way.
 
 Example:
-```
+-------
+```C#
 List<Person> persons = GetAllPersons();
 var cache = CacheFactory.CreateCache(persons);
 cache.AddIndexer(new Indexer<Person, string>(p => p.Name));
-var janes = cache.Get(p => p.Name, "Jane").ToList(); // Returns all persons with name Jane
+// Returns all persons with name Jane
+var janes = cache.Get(p => p.Name, "Jane").ToList(); 
 cache.AddIndexer(new Indexer<Person, string>(p => p.LastName));
-var janes = cache.Get(p => p.LastName, "Smith").ToList(); // Returns all persons with last name Smith
+// Returns all persons with last name Smith
+var janes = cache.Get(p => p.LastName, "Smith").ToList(); 
 ```
 
 User can not query by non-indexed field, ArgumentException is thrown in that case.
-```
+```C#
 List<Person> persons = GetAllPersons();
 var cache = CacheFactory.CreateCache(persons);
-var bornInThatDay = cache.Get(p => p.BirthDate, new DateTime(1970,1,1)); // not allowed, the field is not indexed
+// not allowed, the field is not indexed
+var bornInThatDay = cache.Get(p => p.BirthDate, new DateTime(1970,1,1)); 
 ```
 
 Other usecases are expressed in tests.
