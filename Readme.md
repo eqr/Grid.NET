@@ -31,6 +31,7 @@ Plans:
 * Distributed cache
 * Document things better, add examples
 * Publish a NuGet package
+* More complicated queries (e.g. range queries)
 
 Improvements for indexer:
 -------------------------
