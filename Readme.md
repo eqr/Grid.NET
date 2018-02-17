@@ -10,7 +10,7 @@ cache.AddIndexer(new Indexer<Person, string>(p => p.Name));
 var janes = cache.Get(p => p.Name, "Jane").ToList(); 
 cache.AddIndexer(new Indexer<Person, string>(p => p.LastName));
 // Returns all persons with last name Smith
-var janes = cache.Get(p => p.LastName, "Smith").ToList(); 
+var smiths = cache.Get(p => p.LastName, "Smith").ToList(); 
 ```
 
 User can not query by non-indexed field, ArgumentException is thrown in that case.
