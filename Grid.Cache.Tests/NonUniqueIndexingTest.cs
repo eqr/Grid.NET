@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Grid.Cache.Tests
 {
     [TestClass]
-    public class NonUniquieIndexingTest
+    public class NonUniqueIndexingTest
     {
         [TestMethod]
         public void ItemIsReturnedIfIndexed()
